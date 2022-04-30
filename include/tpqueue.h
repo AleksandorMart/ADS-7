@@ -12,9 +12,10 @@ class TPQueue {
 private:
 struct point {
 T inf;
-point* next = NULL;
+point* next;
 point(T zn){
 inf = zn;
+next = NULL;
 }
 };
 
