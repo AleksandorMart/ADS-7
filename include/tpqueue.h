@@ -35,11 +35,9 @@ point* count = head;
 if (count->inf.prior < znach.prior) {
 head = new point(znach);
 head->next = count;
-}
-else {
+} else {
 int f = 0;
-while (count->next != nullptr)
-{
+while (count->next != nullptr) {
 if (count->next->inf.prior < znach.prior) {
 point* tmp = new point(znach);
 tmp->next = count->next;
