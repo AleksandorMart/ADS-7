@@ -22,29 +22,25 @@ next = nullptr;
 point* head;
 
  public:
-
-TPQueue(){
- head = nullptr;
+TPQueue() {
+head = nullptr;
 }
 
 void push(T znach) {
 if (head == nullptr) {
 head = new point(znach);
+return;
 }
-else {
 point* count = head;
-if (count->inf.prior < znach.prior)
-{
+if (count->inf.prior < znach.prior) {
 head = new point(znach);
 head->next = count;
 }
-else
-{
+else {
 int f = 0;
 while (count->next != nullptr)
 {
-if (count->next->inf.prior < znach.prior)
-{
+if (count->next->inf.prior < znach.prior) {
 point* tmp = new point(znach);
 tmp->next = count->next;
 count->next = tmp;
@@ -53,10 +49,8 @@ break;
 }
 count = count->next;
 }
-if (f == 0)
-{
+if (f == 0) {
 count->next = new point(znach);
-}
 }
 }
 }
@@ -68,7 +62,7 @@ return count->inf;
 }
 
 ~TPQueue(){
-T* del;
+point* del;
 while(head != nullptr){
 del = head;
 head = head->next;
